@@ -13,17 +13,15 @@ const questions = [
     "What is the usage info?", //3
     "Where there any contributors?",//4
     "Was there any testing?", //5
-    "Pick a liscense.", //6
+    "Pick a license.", //6
     "Whats your github username?", //7 
-    "What is your email?" //8
+    "Whats your email?" //8
 ];
 
 // Function to initialize app
 
 function init() {
-
     inquirer.prompt([
-
     { 
         type: "input",
         name: "title",
@@ -84,7 +82,6 @@ function init() {
 //Function to write Readme
 
 function writeToFile(data) {
-
     fs.writeFile( data, "producedMarkdown.md", () => {
         console.log("Markdown Produced!");
     });
