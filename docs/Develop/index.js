@@ -2,7 +2,7 @@
 
 var inquirer = require("inquirer");
 const fs = require("fs");
-const generateMarkdown = require("docs/Develop/utils/generateMarkdown.js");
+const generateMarkdown = require("./utils/generateMarkdown.js");
 
 // Questions for the User
 
@@ -56,7 +56,7 @@ function init() {
         type: "checkbox",
         name: "license",
         message: questions[6]
-        choices: [,
+        choices: [
             "Apache License 2.0",
             "GNU General Public License (GPL)",
             "MIT license",
