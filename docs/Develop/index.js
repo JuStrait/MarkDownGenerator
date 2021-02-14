@@ -18,6 +18,8 @@ const questions = [
     "Whats your email?" //8
 ];
 
+init();
+
 // Function to initialize app
 
 function init() {
@@ -55,7 +57,7 @@ function init() {
     { 
         type: "checkbox",
         name: "license",
-        message: questions[6]
+        message: questions[6],
         choices: [
             "Apache License 2.0",
             "GNU General Public License (GPL)",
@@ -82,7 +84,7 @@ function init() {
 //Function to write Readme
 
 function writeToFile(data) {
-    fs.writeFile( data, "producedMarkdown.md", () => {
+    fs.writeFile("../../producedMarkdown.md", data, function err() {
         console.log("Markdown Produced!");
     });
 

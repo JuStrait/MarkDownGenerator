@@ -1,11 +1,11 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if(license === "none") {
+  if(license[0] === "none") {
     return "";
     }
     else {
-      license = license.replace(/\s/g , "_");
+      license = license[0].replace(/\s/g , "_");
       return `![License](https://img.shields.io/static/v1?label=License&message=${license}&color=blueviolet)`;
     }
 }
@@ -32,12 +32,25 @@ function renderLicenseLink(license) {
     },
   ]
 
-  if (license === "none") {
+  if (license[0] === "none") {
     return "";
   }
   else {
+    let licenseLink = undefined;
+    for (var iterator = 0; iterator < license.length; iterator++) {
+      if (license.iterator === license[0]) {
+        licenseLink = license[0].url;
+        break;
+      }
+    }
+    
+    return licenseLink;
+    /*
+    console.log('licenseInfo', licenseInfo);
     let licenseLink = licenseInfo.find(e => e.name === license);
+    console.log(licenseLink);
     return licenseLink.url;
+    */
   };
 }
 
@@ -56,7 +69,7 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
- 
+
   let licenseBadge = renderLicenseBadge(data.license);
   let licenseSection = renderLicenseSection(data.license);
   
@@ -82,7 +95,7 @@ function generateMarkdown(data) {
   ## Tests: 
   ${data.testing} 
   ### License: 
-  ${license} 
+  ${data.license[0]} 
   ### Github: 
   ${data.github} 
   ### Email: 
