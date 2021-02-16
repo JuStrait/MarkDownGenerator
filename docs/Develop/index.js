@@ -81,11 +81,10 @@ function init() {
     });
 }
 
-//Function to write Readme
+//Function to write Readme to root folder
 
 function writeToFile(data) {
     fs.writeFile("../../producedMarkdown.md", data, function err() {
         console.log("Markdown Produced!");
     });
-
 }
